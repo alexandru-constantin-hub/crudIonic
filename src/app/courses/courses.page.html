@@ -1,31 +1,29 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Student - Course App
+      Courses
     </ion-title>
-    <ion-item lines="none">
-      <ion-toggle (ionChange)="onClick($event)" slot="end"></ion-toggle>
-    </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list >
+  <ion-list>
     <ion-list-header>
-      Student List
+      Courses list
     </ion-list-header>
 
-    <ion-item *ngFor="let student of Students">
+    <ion-item *ngFor="let course of Course">
       <ion-label>
-        <h2>{{student.firstName}} {{student.lastName}}</h2>
-        <h3>{{student.birthday}}</h3>
+        <h2>{{course.courseName}}</h2>
+        <h3>{{course.startDay}}</h3>
+        <h3>{{course.courseDuration}}</h3>
       </ion-label>
 
       <div class="item-note" item-end>
-        <ion-button clear [routerLink]="['/edit-student/', student.id]">
+        <ion-button clear [routerLink]="['/edit-course/', course.id]">
           <ion-icon slot="icon-only" name="create-outline"></ion-icon>
         </ion-button>
-        <ion-button ion-button clear (click)="deleteStudent(student, i)">
+        <ion-button clear (click)="deleteCourse(course, i)">
           <ion-icon slot="icon-only" name="trash-outline" ></ion-icon>
         </ion-button>
       </div>
@@ -34,10 +32,9 @@
 
 
   <!-- fab placed to the bottom start -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/add-student">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/add-course">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
-
