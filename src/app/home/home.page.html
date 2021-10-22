@@ -25,7 +25,7 @@
         <ion-button clear [routerLink]="['/edit-student/', student.id]">
           <ion-icon slot="icon-only" name="create-outline"></ion-icon>
         </ion-button>
-        <ion-button ion-button clear (click)="deleteStudent(student, i)">
+        <ion-button ion-button clear ng-click="deleteStudent(student, i)">
           <ion-icon slot="icon-only" name="trash-outline" ></ion-icon>
         </ion-button>
       </div>
